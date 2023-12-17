@@ -1,0 +1,29 @@
+---
+import MainTitle from "./MainTitle.astro";
+import SubTitle from "./SubTitle.astro";
+import SimpleReview from "./SimpleReview.astro";
+import Testimonial from "./Testimonial.astro";
+import FreeConsultation from "./free-consultation/FreeConsultation.astro";
+import CTA from "./cta/CTA.astro";
+import TestimonialFinance from "./testimonial-finance/TestimonialFinance.astro";
+---
+
+<section>
+  <SimpleReview />
+  <MainTitle />
+  <SubTitle />
+  <Testimonial />
+  <FreeConsultation />
+  <CTA />
+  <TestimonialFinance />
+</section>
+
+<style>
+  section {
+    width: 700px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+</style>

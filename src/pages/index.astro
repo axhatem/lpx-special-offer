@@ -1,0 +1,34 @@
+---
+import Footer from "../components/Footer.astro";
+import Annonce from "../components/Annonce.astro";
+import LeftContent from "../components/left-section/LeftContent.astro";
+import RightContent from "../components/right-section/RightContent.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="container">
+    <Annonce />
+    <div class="content">
+      <LeftContent />
+      <RightContent />
+    </div>
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    gap: 2%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
