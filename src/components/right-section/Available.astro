@@ -1,0 +1,28 @@
+---
+import PulsingCircles from "../common/PulsingCircle";
+---
+
+<div>
+  <p>DISPONIBLE</p>
+  <PulsingCircles client:load />
+</div>
+
+<style>
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    border-radius: 50px;
+    border: #717070 solid 1px;
+    background-color: #8a8a8a4a;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.77;
+  }
+
+  p {
+    font-weight: 400;
+  }
+</style>
