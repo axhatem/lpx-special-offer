@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -16,29 +16,57 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Landing Page X" />
+    <meta property="og:description" content="Landing Page X" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Landing Page X" />
+    <meta name="twitter:description" content="Landing Page X" />
+
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
     <slot />
-  </body>
+  </body><style is:global>
+    html,
+    body,
+    p,
+    table,
+    div,
+    table,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      padding: 0;
+      margin: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    span,
+    button {
+      color: white;
+    }
+
+    body {
+      background-color: #01011b;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Ubuntu;
+    }
+  </style>
 </html>
-<style is:global>
-  html, body, p, table, div, table, h1, h2, h3, h4, h5 {
-    padding: 0;
-    margin: 0;
-  }
-
-  html, body {
-    height: 100%;
-  }
-
-  p, h1, h2, h3, h4, h5, span, button {
-    color: white;
-  }
-
-  body  {
-    background-color: #01011b;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-  }
-</style>
