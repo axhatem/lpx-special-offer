@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 
-const SITE_CONFIG = "https://axhatem.github.io/";
+const SITE_CONFIG = "https://axhatem.github.io";
 const BASE_CONFIG = "/lpxtest";
 
 // https://astro.build/config
