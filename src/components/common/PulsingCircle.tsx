@@ -24,7 +24,7 @@ export default function PulsingCircles() {
     delay: delay,
   };
 
-  const containerStyle: React.CSSProperties = {
+  const containerStyle: any = {
     height: `${size * scale}px`,
     width: `${size * scale}px`,
     display: "flex",
@@ -33,7 +33,7 @@ export default function PulsingCircles() {
     position: "relative",
   };
 
-  const circleStyle: React.CSSProperties = {
+  const circleStyle: any = {
     width: `${size}px`,
     height: `${size}px`,
     borderRadius: "50%",
