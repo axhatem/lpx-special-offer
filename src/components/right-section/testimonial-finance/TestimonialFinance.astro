@@ -1,7 +1,7 @@
 ---
+import { withBase } from "../../../utils/config-utils.ts";
 import FiveRating from "../../common/FiveRating.astro";
-import { withBase } from "@/utils/config-utils.ts";
-const financeTestimonialImageUrl = withBase('/images/finance-testimonial.png');
+const financeTestimonialImageUrl = withBase("/images/finance-testimonial.png");
 ---
 
 <section>
@@ -18,28 +18,26 @@ const financeTestimonialImageUrl = withBase('/images/finance-testimonial.png');
       <p>Investissements en Bourse</p>
     </div>
   </div>
-
 </section>
 
 <style>
-
-.title {
-  font-weight: 500;
-}
+  .title {
+    font-weight: 500;
+  }
 
   img {
     width: 42px;
     height: 42px;
   }
-.avatar {
-  display: flex;
-}
+  .avatar {
+    display: flex;
+  }
 
-.avatar-text{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
+  .avatar-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
 
   section {
     gap: 6px;
