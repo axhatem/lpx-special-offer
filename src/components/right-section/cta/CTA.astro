@@ -1,8 +1,8 @@
 ---
 import { withBase } from "/src/utils/config-utils.ts";
 const arrowImageUrl = withBase('/images/arrow.png');
+const twitterXImageUrl = withBase('/images/twitter-X.svg');
 ---
-
 
 <button>
   <div class="container">
@@ -15,7 +15,7 @@ const arrowImageUrl = withBase('/images/arrow.png');
         APPEL AMICAL ! Tu décides tranquillement si tu me confies le projet.
       </p>
     </div>
-    <img class="twitter-logo" src="/lpxtest/images/twitter-X.svg" alt="Twitter X" />
+    <img class="twitter-logo" src={twitterXImageUrl} alt="Twitter X" />
   </div>
 </button>
 
