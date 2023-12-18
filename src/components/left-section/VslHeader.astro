@@ -1,5 +1,10 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const toolImageUrl = withBase('/images/tool.png');
+---
+
 <div>
-  <img src="/lpxtest/images/tool.png" alt="Tool" />
+  <img src={toolImageUrl} alt="Tool" />
   <p>JE CONSTRUIS</p>
 </div>
 

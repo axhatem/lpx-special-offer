@@ -1,5 +1,7 @@
 ---
 import FiveRating from "../../common/FiveRating.astro";
+import { withBase } from "/src/utils/config-utils.ts";
+const financeTestimonialImageUrl = withBase('/images/finance-testimonial.png');
 ---
 
 <section>
@@ -10,7 +12,7 @@ import FiveRating from "../../common/FiveRating.astro";
     recommande le travail de Axel Landing Page, c'est un pro dans son domaine."
   </p>
   <div class="avatar">
-    <img src="/lpxtest/images/finance-testimonial.png" />
+    <img src={financeTestimonialImageUrl} />
     <div class="avatar-text">
       <p class="title">Finances Futures</p>
       <p>Investissements en Bourse</p>

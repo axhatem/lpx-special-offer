@@ -1,5 +1,10 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const checkboxImageUrl = withBase('/images/checkbox.png');
+---
+
 <div>
-  <img src="/lpxtest/images/checkbox.png" alt="Checked" />
+  <img src={checkboxImageUrl} alt="Checked" />
   <slot />
 </div>
 

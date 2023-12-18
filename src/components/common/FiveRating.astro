@@ -1,9 +1,14 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const starImageUrl = withBase('/images/star.png');
+---
+
 <div>
-  <img src="/lpxtest/images/star.png" />
-  <img src="/lpxtest/images/star.png" />
-  <img src="/lpxtest/images/star.png" />
-  <img src="/lpxtest/images/star.png" />
-  <img src="/lpxtest/images/star.png" />
+  <img src={starImageUrl} />
+  <img src={starImageUrl} />
+  <img src={starImageUrl} />
+  <img src={starImageUrl} />
+  <img src={starImageUrl} />
 </div>
 
 <style>

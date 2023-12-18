@@ -1,5 +1,10 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const legalMentionsPageUrl = withBase('/mentions-legales');
+---
+
 <section>
-  <a href="/lpxtest/mentions-legales">Mentions Legales</a>
+  <a href={legalMentionsPageUrl}>Mentions Legales</a>
 </section>
 
 <style>

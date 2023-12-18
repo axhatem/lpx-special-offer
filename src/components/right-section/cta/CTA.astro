@@ -1,8 +1,14 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const arrowImageUrl = withBase('/images/arrow.png');
+---
+
+
 <button>
   <div class="container">
   <div class="all-lines">
     <div class="first-line">
-        <img src="/lpxtest/images/arrow.png" alt="Arrow" />
+        <img src={arrowImageUrl} alt="Arrow" />
         <p class="text1">J'OBTIENS UNE LANDING PAGE PERFORMANTE</p>
       </div>
       <p>

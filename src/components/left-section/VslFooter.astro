@@ -1,6 +1,11 @@
+---
+import { withBase } from "/src/utils/config-utils.ts";
+const goldImageUrl = withBase('/images/gold.png');
+---
+
 <div>
   <p>TU MONÉTISES</p>
-  <img src="/lpxtest/images/gold.png" alt="Tool" />
+  <img src={goldImageUrl} alt="Tool" />
 </div>
 
 <style>
