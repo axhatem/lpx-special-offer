@@ -1,11 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../utils/config-utils.ts";
 const telegramImageUrl = withBase('/images/telegram.png');
 ---
 
 
 <div>
-  <img alt="Telegram" src={telegramImageUrl} />
+  <Image
+    src={telegramImageUrl}
+    alt="Telegram"
+    width={66}
+    height={66}
+/>
 </div>
 
 <style>

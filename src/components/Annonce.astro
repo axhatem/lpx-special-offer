@@ -1,12 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../utils/config-utils.ts";
 const warningImageUrl = withBase('/images/warning.png');
 ---
 
 <section>
-  <img
+  <Image
     src={warningImageUrl}
     alt="Warning!"
+    width={20}
+    height={20}
   />
   <p>Je n’accepte que 2 projets par mois.</p>
 </section>

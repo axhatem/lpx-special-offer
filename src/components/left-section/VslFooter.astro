@@ -1,11 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../../utils/config-utils.ts";
 const goldImageUrl = withBase('/images/gold.png');
 ---
 
 <div>
   <p>TU MONÉTISES</p>
-  <img src={goldImageUrl} alt="Tool" />
+  <Image class="image" src={goldImageUrl} alt={"Tool"} width={29} height={29} />
 </div>
 
 <style>
@@ -17,10 +18,8 @@ div {
     align-items: center;
   }
 
-  img {
+  .image {
     display:block;
-    width:29px;
-    height:29px;
     border-radius:inherit;
     object-position:center;
     object-fit:cover;
@@ -29,12 +28,9 @@ div {
     border-left: 1px solid #717070;
   }
 
-  
   p{
     width: 100%;
     font-weight: 500;
     text-align: center;
   }
-
- 
 </style>

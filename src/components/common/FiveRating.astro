@@ -1,24 +1,18 @@
 ---
-import { withBase } from "../../utils/config-utils.ts";
-const starImageUrl = withBase('/images/star.png');
+import StarRating from './StarRating.astro';
 ---
 
 <div>
-  <img src={starImageUrl} />
-  <img src={starImageUrl} />
-  <img src={starImageUrl} />
-  <img src={starImageUrl} />
-  <img src={starImageUrl} />
+  <StarRating />
+  <StarRating />
+  <StarRating />
+  <StarRating />
+  <StarRating />
 </div>
 
 <style>
   div {
     display: flex;
     gap: 1px;
-  }
-
-  img {
-    width: 11px;
-    height: 11px;
   }
 </style>

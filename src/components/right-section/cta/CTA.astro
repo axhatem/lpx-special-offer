@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../../../utils/config-utils.ts";
 const arrowImageUrl = withBase('/images/arrow.png');
 const twitterXImageUrl = withBase('/images/twitter-X.svg');
@@ -8,14 +9,14 @@ const twitterXImageUrl = withBase('/images/twitter-X.svg');
   <div class="container">
   <div class="all-lines">
     <div class="first-line">
-        <img src={arrowImageUrl} alt="Arrow" />
+      <Image src={arrowImageUrl} alt={"Arrow"} width={30} height={30} />
         <p class="text1">J'OBTIENS UNE LANDING PAGE PERFORMANTE</p>
       </div>
       <p>
         APPEL AMICAL ! Tu décides tranquillement si tu me confies le projet.
       </p>
     </div>
-    <img class="twitter-logo" src={twitterXImageUrl} alt="Twitter X" />
+    <Image class="twitter-logo" src={twitterXImageUrl} alt={"witter X"} width={50} height={50} />
   </div>
 </button>
 
@@ -24,11 +25,6 @@ const twitterXImageUrl = withBase('/images/twitter-X.svg');
     font-weight: 900;
   }
 
-  .twitter-logo {
-    height: 50px;
-    width: 50px;
-  }
-  
   .first-line {
     display: flex;
     justify-content: center;
@@ -42,11 +38,6 @@ const twitterXImageUrl = withBase('/images/twitter-X.svg');
     align-items: start;
     flex-direction: column;
     gap: 3px;
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
   }
 
   button {

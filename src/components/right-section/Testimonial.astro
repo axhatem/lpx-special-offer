@@ -1,12 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../../utils/config-utils.ts";
 const testimonialNicoImageUrl = withBase('/images/testimonial-nico.png');
 ---
 
 <div>
-  <img
+  <Image
     src={testimonialNicoImageUrl}
     alt="Nico Media Byer | Temoignage"
+    width={502}
+    height={164}
   />
 </div>
 

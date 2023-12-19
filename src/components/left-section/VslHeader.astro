@@ -1,10 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import { withBase } from "../../utils/config-utils.ts";
 const toolImageUrl = withBase('/images/tool.png');
 ---
 
 <div>
-  <img src={toolImageUrl} alt="Tool" />
+  <Image class={"image"} src={toolImageUrl} alt={"Tool"} width={29} height={29} />
   <p>JE CONSTRUIS</p>
 </div>
 
@@ -17,10 +18,8 @@ div {
     align-items: center;
   }
 
-  img {
+  .image {
     display:block;
-    width:29px;
-    height:29px;
     border-radius:inherit;
     object-position:center;
     object-fit:cover;
