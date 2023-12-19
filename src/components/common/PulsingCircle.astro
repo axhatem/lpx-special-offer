@@ -1,0 +1,43 @@
+---
+---
+
+<div class="container">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+</div>
+
+<style>
+
+.container{
+    position: relative;
+}
+
+div {
+    border-radius: 50px;
+    background-color: aliceblue;
+    width: 11px;
+    height: 11px;
+}
+
+.circle1 {
+    position: absolute;
+    animation: pulse 1s infinite;
+}
+
+.circle2 {
+    position: absolute;
+    animation: pulse 1s 1s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+</style>
