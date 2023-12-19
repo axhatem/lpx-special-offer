@@ -5,7 +5,7 @@ const arrowImageUrl = withBase('/images/arrow.png');
 const twitterXImageUrl = withBase('/images/twitter-X.svg');
 ---
 
-<button>
+<button class="animated-button">
   <div class="container">
   <div class="all-lines">
     <div class="first-line">
@@ -50,9 +50,20 @@ const twitterXImageUrl = withBase('/images/twitter-X.svg');
     box-shadow: inset 4px 1px 2px #00000040;
   }
 
+  .animated-button {
+    position: relative;
+    opacity: 1; /* Initial opacity */
+    transition: transform 0.5s, opacity 0.5s; /* Define transitions for transform and opacity */
+  }
+
+  .animated-button:hover {
+    transform: translateX(5px); /* Move to the right on hover */
+    opacity: 0.7; /* Change opacity on hover */
+  }
+
   .container {
     justify-content: center;
     display: flex;
     gap: 2px;
-  }
+  } 
 </style>
