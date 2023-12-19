@@ -1,23 +1,19 @@
+<script type="module">
+    const checkElement = setInterval(() => {
+      const element = document.querySelector(".mt-2");
+      if (element) {
+        element.style.display = 'none';
+        clearInterval(checkElement);
+      }
+    }, 100); 
+</script>
+
 <div>
-  <iframe
-    title="Temoignage Video de Val"
-    src="https://widget.senja.io/widget/8221b878-f37a-4607-abc2-025f17a6d9d4"
-    scrolling="no"></iframe>
+  <div class="senja-embed" data-id="d5a2c444-5e01-4515-81b0-7a0b5d7abee9" data-lazyload="true"></div>
 </div>
 
 <style>
-
-div {
-    height: 536px;
+  div {
     padding: 10px;
   }
-
-  iframe {
-    border: 0px;
-    width: 100%;
-    height: 100%;
-    width: 240px;
-    overflow: hidden;
-  }
-
 </style>
