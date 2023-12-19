@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { withBase } from "../utils/config-utils.ts";
+import { bannerBackgroundColor } from "../style/colors.ts";
 const warningImageUrl = withBase('/images/warning.png');
 ---
 
@@ -14,14 +15,14 @@ const warningImageUrl = withBase('/images/warning.png');
   <p>Je n’accepte que 2 projets par mois.</p>
 </section>
 
-<style>
+<style define:vars={{ bannerBackgroundColor }}>
  section {
   gap: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #ececec;
+  background-color: var(--bannerBackgroundColor);
 }
 
 img {

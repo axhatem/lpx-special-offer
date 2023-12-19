@@ -1,5 +1,6 @@
 ---
 import { withBase } from "../utils/config-utils.ts";
+import { bannerBackgroundColor } from "../style/colors.ts";
 const legalMentionsPageUrl = withBase("/mentions-legales");
 ---
 
@@ -7,13 +8,13 @@ const legalMentionsPageUrl = withBase("/mentions-legales");
   <a href={legalMentionsPageUrl}>Mentions Legales</a>
 </section>
 
-<style>
+<style define:vars={{ bannerBackgroundColor }}>
   section {
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     width: 100%;
-    background-color: #ececec;
+    background-color: var(--bannerBackgroundColor);
     height: 37px;
   }
 </style>
