@@ -4,9 +4,13 @@ import Annonce from "../components/Annonce.astro";
 import LeftContent from "../components/left-section/LeftContent.astro";
 import RightContent from "../components/right-section/RightContent.astro";
 import Layout from "../layouts/Layout.astro";
+import Available from "../components/Available.astro";
+import Telegram from "../components/Telegram.astro";
 ---
 
 <Layout title="Welcome to Astro.">
+  <Available />
+  <Telegram />
   <div class="container">
     <Annonce />
     <div class="content">

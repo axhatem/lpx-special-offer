@@ -1,0 +1,20 @@
+---
+import { withBase } from "../utils/config-utils.ts";
+const telegramImageUrl = withBase('/images/telegram.png');
+---
+
+
+<div>
+  <img alt="Telegram" src={telegramImageUrl} />
+</div>
+
+<style>
+  img {
+    position: fixed;
+    bottom: 3rem;
+    right: 5rem;
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+  }
+</style>
