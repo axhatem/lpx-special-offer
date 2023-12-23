@@ -13,8 +13,10 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
       >reste 1 place</span
     >&nbsp;pour propulser ta Landing Page
   </p>
-  <p class="take-chance">JE SAISIS MA CHANCE</p>
-  <Image src={rightArrowSquareUrl} alt="Warning!" width={20} height={20} />
+  <div class="take-chance-container">
+    <p class="take-chance">JE SAISIS MA CHANCE</p>
+    <Image src={rightArrowSquareUrl} alt="Warning!" width={20} height={20} />
+  </div>
 </section>
 
 <style define:vars={{ bannerBackgroundColor, redColor }}>
@@ -58,5 +60,12 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
     line-height: normal;
     letter-spacing: -0.36px;
     text-decoration-line: underline;
+  }
+
+  .take-chance-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 </style>
