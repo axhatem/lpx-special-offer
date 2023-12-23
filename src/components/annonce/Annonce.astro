@@ -1,23 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import { withBase } from "../../utils/config-utils.ts";
-import { bannerBackgroundColor } from "../../style/colors.ts";
+import { bannerBackgroundColor, redColor } from "../../style/colors.ts";
 import Available from "./Available.astro";
-const warningImageUrl = withBase("/images/warning.png");
+const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
 ---
 
 <section>
   <Available />
-  <Image src={warningImageUrl} alt="Warning!" width={20} height={20} />
   <p>
     Si tu vois cette page, c'est qu'il me&nbsp;<span class="underline"
       >reste 1 place</span
     >&nbsp;pour propulser ta Landing Page
   </p>
-  <p>JE SAISIS MA CHANCE</p>
+  <p class="take-chance">JE SAISIS MA CHANCE</p>
+  <Image src={rightArrowSquareUrl} alt="Warning!" width={20} height={20} />
 </section>
 
-<style define:vars={{ bannerBackgroundColor }}>
+<style define:vars={{ bannerBackgroundColor, redColor }}>
   section {
     gap: 6px;
     display: flex;
@@ -25,6 +25,7 @@ const warningImageUrl = withBase("/images/warning.png");
     align-items: center;
     width: 100%;
     background-color: var(--bannerBackgroundColor);
+    height: 3rem;
   }
 
   img {
@@ -46,5 +47,16 @@ const warningImageUrl = withBase("/images/warning.png");
     height: 2rem;
     line-height: 2rem;
     padding-bottom: 0.1rem;
+  }
+
+  .take-chance {
+    color: var(--redColor);
+    margin-left: 1rem;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    text-decoration-line: underline;
   }
 </style>
