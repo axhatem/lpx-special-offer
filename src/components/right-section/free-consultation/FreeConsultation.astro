@@ -4,7 +4,7 @@ import FreeConsultationItem from "./FreeConsultationItem.astro";
 
 <div class="free-consultation">
   <h3>20MIN-CONSULTATION <span>(offert)</span></h3>
-  <div class="free-consultation-items scroll-hidden">
+  <div class="free-consultation-items">
     <FreeConsultationItem>
       <p>Bénéficie d'une vitrine à ton image pour ton business</p>
     </FreeConsultationItem>
@@ -23,7 +23,7 @@ import FreeConsultationItem from "./FreeConsultationItem.astro";
   </div>
 </div>
 
-<style is:global>
+<style>
   .free-consultation {
     display: flex;
     flex-direction: column;
@@ -40,39 +40,4 @@ import FreeConsultationItem from "./FreeConsultationItem.astro";
   .free-consultation-items {
     margin-top: 10px;
   }
-
-  
-  .scroll-hidden .free-consultation-item {
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateX(-100%);
-        transition: all 1s;
-      }
-
-      .scroll-show .free-consultation-item {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateX(0);
-      }
-
-      .free-consultation-item:nth-child(1) {
-        transition-delay: 0ms;
-      }
-
-      .free-consultation-item:nth-child(2) {
-        transition-delay: 100ms;
-      }
-
-      .free-consultation-item:nth-child(3) {
-        transition-delay: 200ms;
-      }
-
-      .free-consultation-item:nth-child(4) {
-        transition-delay: 300ms;
-      }
-
-      .free-consultation-item:nth-child(5) {
-        transition-delay: 400ms;
-      }
-
 </style>

@@ -1,31 +1,27 @@
 ---
-import PulsingCircle from "./common/PulsingCircle.astro";
+import PulsingCircle from "../common/PulsingCircle.astro";
+import { redColor } from "../../style/colors.ts";
 ---
 
 <div>
   <p>DISPONIBLE</p>
-  <PulsingCircle client:load />
+  <PulsingCircle color={redColor} />
 </div>
 
 <style>
   div {
-    position: fixed;
-    bottom: 5rem;
-    left: 5rem;
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     align-items: center;
-    border-radius: 50px;
-    border: #717070 solid 1px;
-    background-color: #8a8a8a4a;
     width: 150px;
-    height: 40px;
     cursor: pointer;
     opacity: 0.77;
   }
 
   p {
     font-weight: 400;
+    color: black;
+    padding-bottom: 0.1rem;
   }
 </style>

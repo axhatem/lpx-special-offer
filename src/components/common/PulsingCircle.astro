@@ -1,9 +1,17 @@
+---
+interface Props {
+  color: string;
+}
+
+const { color } = Astro.props;
+---
+
 <div class="container">
-    <div class="pulse"></div>
+  <div class="pulse"></div>
 </div>
 
-<style>
-.container {
+<style define:vars={{ color }}>
+  .container {
     position: relative;
     width: 11px;
     height: 11px;
@@ -11,42 +19,42 @@
     right: 0;
     left: 0;
     bottom: 0;
-}
+  }
 
-.pulse{
+  .pulse {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     border-radius: 50px;
-    background-color: aliceblue;
-}
+    background-color: var(--color);
+  }
 
-.pulse:before,
-.pulse:after {
+  .pulse:before,
+  .pulse:after {
     content: "";
     position: absolute;
     border-radius: 50px;
     width: 100%;
     height: 100%;
-    background-color: aliceblue;
+    background-color: var(--color);
     z-index: -1;
     opacity: 0.7;
-}
+  }
 
-.pulse:before {
+  .pulse:before {
     animation: pulse 2s ease-out infinite;
-}
+  }
 
-.pulse:after {
+  .pulse:after {
     animation: pulse 2s 1s ease-out infinite;
-}
+  }
 
-@keyframes pulse {
+  @keyframes pulse {
     100% {
-        transform: scale(2);
-        opacity: 0;
+      transform: scale(2);
+      opacity: 0;
     }
-}
+  }
 </style>

@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../utils/config-utils.ts";
+import { bannerBackgroundColor } from "../../style/colors.ts";
+import Available from "./Available.astro";
+const warningImageUrl = withBase("/images/warning.png");
+---
+
+<section>
+  <Available />
+  <Image src={warningImageUrl} alt="Warning!" width={20} height={20} />
+  <p>
+    Si tu vois cette page, c'est qu'il me&nbsp;<span class="underline"
+      >reste 1 place</span
+    >&nbsp;pour propulser ta Landing Page
+  </p>
+  <p>JE SAISIS MA CHANCE</p>
+</section>
+
+<style define:vars={{ bannerBackgroundColor }}>
+  section {
+    gap: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--bannerBackgroundColor);
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .underline {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  p {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 2rem;
+    line-height: 2rem;
+    padding-bottom: 0.1rem;
+  }
+</style>
