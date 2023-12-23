@@ -1,20 +1,21 @@
 ---
 interface Props {
   color: string;
+  size: string;
 }
 
-const { color } = Astro.props;
+const { color, size } = Astro.props;
 ---
 
 <div class="container">
   <div class="pulse"></div>
 </div>
 
-<style define:vars={{ color }}>
+<style define:vars={{ color, size }}>
   .container {
     position: relative;
-    width: 11px;
-    height: 11px;
+    width: var(--size);
+    height: var(--size);
     top: 0;
     right: 0;
     left: 0;
