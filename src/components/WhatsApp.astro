@@ -22,4 +22,10 @@ const telegramImageUrl = withBase("/images/whatsapp.png");
   img:hover {
     transform: scale(1.2);
   }
+
+  @media (hover: none), (pointer: coarse) {
+    img:hover {
+      transform: scale(1);
+    }
+  }
 </style>
