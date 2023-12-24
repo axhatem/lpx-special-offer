@@ -19,9 +19,17 @@ const telegramImageUrl = withBase("/images/telegram.png");
     transition: transform 0.2s;
   }
 
-  @media (hover: hover) {
+  img:hover {
+    transform: scale(1.2);
+  }
+
+  @media only screen and (max-width: 768px), (pointer: coarse), (hover: none) {
     img:hover {
       transform: scale(1.2);
+    }
+
+    div {
+      background-color: rebeccapurple;
     }
   }
 </style>
