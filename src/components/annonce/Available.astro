@@ -3,13 +3,14 @@ import PulsingCircle from "../common/PulsingCircle.astro";
 import { redColor } from "../../style/colors.ts";
 ---
 
-<div>
+<a href="https://google.fr">
   <p>DISPONIBLE</p>
   <PulsingCircle color={redColor} size="1rem" />
-</div>
+</a>
 
 <style>
-  div {
+  a {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     gap: 0.5rem;

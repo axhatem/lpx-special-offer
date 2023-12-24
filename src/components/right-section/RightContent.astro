@@ -6,9 +6,19 @@ import CTA from "./cta/CTA.astro";
 import AlertTitle from "./AlerteTitle.astro";
 import ReturnCriteriaChecklist from "./return-criteria-checklist/ReturnCriteriaChecklist.astro";
 import ValidateStrategyTogether from "./ValidateStrategyTogether.astro";
+import { withBase } from "../../utils/config-utils";
+import { Image } from "astro:assets";
+const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
 ---
 
 <section>
+  <Image
+    src={leftDownArrowImageUrl}
+    alt={"Video ICI"}
+    width={100}
+    height={100}
+    class={"left-down-arrow"}
+  />
   <SimpleReview />
   <MainTitle />
   <SubTitle />
@@ -19,8 +29,13 @@ import ValidateStrategyTogether from "./ValidateStrategyTogether.astro";
 </section>
 
 <style>
+  .left-down-arrow {
+    position: absolute;
+    left: -10rem;
+  }
+
   section {
-    margin-top: 5rem;
+    margin-top: 4rem;
     width: 850px;
     padding: 2rem 3.5rem;
     display: flex;
@@ -30,5 +45,6 @@ import ValidateStrategyTogether from "./ValidateStrategyTogether.astro";
     border: 1px solid #9b0c3e;
     background: #fff;
     box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.2) inset;
+    position: relative;
   }
 </style>
