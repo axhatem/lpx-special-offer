@@ -131,20 +131,20 @@
     transition: scale var(--animation-speed) linear;
   }
 
-  @media (hover: none), (pointer: coarse) {
+  @media only screen and (hover: none) and (pointer: coarse) {
     .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
-      stroke-dashoffset: 0; /* Reset or disable hover styles */
-      transition: none; /* Remove transitions on hover */
+      stroke-dashoffset: 0;
+      transition: none;
     }
 
     .glow-effect:is(:hover, :focus) .glow-container {
-      animation: none; /* Disable the glow animation */
+      animation: none;
     }
 
     .glow-effect[data-glow-animation="grow"]:is(:hover, :focus)
       .glow-container {
-      scale: 1; /* Reset or disable hover-related scaling */
-      transition: none; /* Remove scaling transition on hover */
+      scale: 1;
+      transition: none;
     }
   }
 </style>
