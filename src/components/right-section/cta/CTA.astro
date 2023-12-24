@@ -1,182 +1,34 @@
----
-import { Image } from "astro:assets";
-import { withBase } from "../../../utils/config-utils.ts";
-const arrowImageUrl = withBase("/images/arrow.png");
-const twitterXImageUrl = withBase("/images/twitter-X.svg");
----
-
-<script>
-  (function setGlowEffectRx() {
-    const glowEffects = document.querySelectorAll(".glow-effect");
-
-    glowEffects.forEach((glowEffect) => {
-      const glowLines = glowEffect.querySelectorAll("rect");
-      const rx = getComputedStyle(glowEffect).borderRadius;
-
-      glowLines.forEach((line) => {
-        line.setAttribute("rx", rx);
-      });
-    });
-  })();
-
-  (document.getElementsByClassName("cta") as any)[0].addEventListener(
-    "click",
-    () => {
-      window.location.href = "https://google.fr";
-    }
-  );
-</script>
-
-<button class="cta button glow-effect" data-glow-offset="true">
-  <div class="container">
-    <div class="all-lines">
-      <div class="first-line">
-        <Image src={arrowImageUrl} alt={"Arrow"} width={30} height={30} />
-        <p class="text1">J'OBTIENS UNE LANDING PAGE PERFORMANTE</p>
-      </div>
-      <p>
-        APPEL AMICAL ! Tu décides tranquillement si tu me confies le projet.
-      </p>
-    </div>
-    <Image
-      class="twitter-logo"
-      src={twitterXImageUrl}
-      alt={"witter X"}
-      width={50}
-      height={50}
-    />
-  </div>
-  <svg class="glow-container">
-    <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
-    <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
-  </svg>
-</button>
+<a href="https://google.fr" class="button glow-effect" data-glow-offset="true">
+  <span class="main">J'OBTIENS UNE LANDING PAGE PERFORMANTE</span><span
+    class="secondary">Je n'accepte ton projet que s'il a du potentiel.</span
+  >
+</a>
 
 <style>
-  .text1 {
-    font-weight: 900;
-  }
-
-  .first-line {
+  .button {
+    height: 100px;
+    text-decoration: none;
+    color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .all-lines {
-    display: flex;
-    justify-content: center;
-    align-items: start;
     flex-direction: column;
-    gap: 3px;
-  }
-
-  button {
-    opacity: 0.85;
-    transition:
-      transform 0.5s,
-      opacity 0.5s;
-    position: relative;
-    background-color: #f20d5e;
-    border-radius: 20px;
-    width: 535px;
-    height: 75px;
-    border: 0;
-    cursor: pointer;
-    box-shadow: inset 4px 1px 2px #00000040;
-  }
-
-  button:hover {
-    transform: translateX(4px);
-    opacity: 1;
-  }
-
-  .glow-effect {
-    --glow-line-color: #f20d5e;
-    --glow-line-thickness: 2px;
-    --glow-line-length: 10px;
-    --glow-blur-color: #f20d5e;
-    --glow-blur-size: 10px;
-    --glow-offset: 0px;
-    --animation-speed: 1500ms;
-    /* do not change, used for calculations */
-    --container-offset: 100px;
-    position: relative;
-  }
-
-  .glow-container {
-    pointer-events: none;
-    position: absolute;
-    inset: calc(var(--container-offset) / -2);
-    width: calc(100% + var(--container-offset));
-    height: calc(100% + var(--container-offset));
-    opacity: 0;
-    /* outline: 3px solid blue; */
-  }
-
-  .glow-blur,
-  .glow-line {
-    width: calc(100% - var(--container-offset) + var(--glow-offset));
-    height: calc(100% - var(--container-offset) + var(--glow-offset));
-    x: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
-    y: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
-    fill: transparent;
-    stroke: black;
-    stroke-width: 5px;
-    stroke-dasharray: var(--glow-line-length)
-      calc(50px - var(--glow-line-length));
-  }
-
-  .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
-    stroke-dashoffset: -80px;
-    transition: stroke-dashoffset var(--animation-speed) ease-in;
-  }
-
-  .glow-line {
-    stroke: var(--glow-line-color);
-    stroke-width: var(--glow-line-thickness);
-  }
-
-  .glow-blur {
-    filter: blur(var(--glow-blur-size));
-    stroke: var(--glow-blur-color);
-    stroke-width: var(--glow-blur-size);
-  }
-
-  .glow-effect:is(:hover, :focus) .glow-container {
-    animation: glow-visibility ease-in-out var(--animation-speed);
-  }
-
-  @keyframes glow-visibility {
-    0%,
-    100% {
-      opacity: 0;
-    }
-    25%,
-    50% {
-      opacity: 1;
-    }
-    75% {
-      opacity: 0.8;
-    }
-  }
-
-  .glow-effect[data-glow-animation="false"] {
-    --glow-line-length: 50px;
-  }
-  .glow-effect[data-glow-offset="true"] {
-    --glow-offset: 10px;
-  }
-
-  .glow-effect[data-glow-animation="grow"]:is(:hover, :focus) .glow-container {
-    scale: 1.2;
-    transition: scale var(--animation-speed) linear;
-  }
-
-  .container {
     justify-content: center;
-    display: flex;
-    gap: 2px;
+    gap: 0.75rem;
+    text-align: center;
+    border-radius: 25px;
+    border: 1px solid #f2f5fa;
+    background: #9b0c3e;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .main {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .secondary {
+    font-size: 0.75rem;
+    font-weight: 300;
   }
 </style>
