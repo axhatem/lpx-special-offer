@@ -3,10 +3,12 @@ import PulsingCircle from "../common/PulsingCircle.astro";
 import { redColor } from "../../style/colors.ts";
 ---
 
-<a href="https://google.fr">
-  <p>DISPONIBLE</p>
-  <PulsingCircle color={redColor} size="1rem" />
-</a>
+<div class="available">
+  <a href="https://google.fr">
+    <p>DISPONIBLE</p>
+    <PulsingCircle color={redColor} size="1rem" />
+  </a>
+</div>
 
 <style>
   a {

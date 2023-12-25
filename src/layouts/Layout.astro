@@ -72,17 +72,6 @@ const { title } = Astro.props;
         height: 100%;
       }
 
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      span,
-      button {
-        color: white;
-      }
-
       body {
         background-color: #f8f8f9;
         font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
@@ -93,6 +82,10 @@ const { title } = Astro.props;
       *::before,
       *::after {
         box-sizing: border-box;
+      }
+
+      .underline {
+        text-decoration: underline;
       }
     </style>
   </body>
