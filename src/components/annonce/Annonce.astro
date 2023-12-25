@@ -20,6 +20,10 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
 </section>
 
 <style define:vars={{ bannerBackgroundColor, redColor }}>
+  :root {
+    --font-size: 0.8rem;
+  }
+
   section {
     z-index: 1;
     position: fixed;
@@ -43,6 +47,7 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
   }
 
   p {
+    font-size: var(--font-size);
     color: black;
     display: flex;
     justify-content: center;
