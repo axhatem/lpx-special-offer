@@ -11,7 +11,7 @@ import { Image } from "astro:assets";
 const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
 ---
 
-<section>
+<section class="right-section">
   <Image
     src={leftDownArrowImageUrl}
     alt={"Video ICI"}
@@ -34,7 +34,7 @@ const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
     left: -10rem;
   }
 
-  section {
+  .right-section {
     margin-top: 4rem;
     padding: 1rem 2rem;
     display: flex;
@@ -49,7 +49,7 @@ const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
   }
 
   @media (max-width: 1000px) {
-    section {
+    .right-section {
       margin: auto;
       width: 90%;
     }
