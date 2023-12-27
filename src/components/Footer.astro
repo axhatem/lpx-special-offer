@@ -4,21 +4,28 @@ const legalMentionsPageUrl = withBase("/mentions-legales");
 ---
 
 <section class="footer">
-  <a href={legalMentionsPageUrl}>MENTIONS LEGALES</a>
+  <span class="footer-text">Tous droits réservés</span>
+  <a class="footer-text" href={legalMentionsPageUrl}>Mentions Légales</a>
+  <span class="footer-text">Site réalisé par Landing-X</span>
 </section>
 
 <style>
   .footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: black;
+    background-color: #fcfcfc;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
     height: 3rem;
   }
 
   a {
-    font-size: 1rem;
     text-decoration: none;
-    color: white;
+  }
+
+  .footer-text {
+    color: black;
+    text-align: center;
+    font-size: 0.75rem;
   }
 </style>
