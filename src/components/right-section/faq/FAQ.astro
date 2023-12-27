@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { withBase } from "../../../utils/config-utils";
 const twitterXImageUrl = withBase("/images/twitter-X.svg");
+import { Content as FAQ1 } from "../../../content/faq-1.md";
 ---
 
 <script>
@@ -38,62 +39,72 @@ const twitterXImageUrl = withBase("/images/twitter-X.svg");
   </p>
   <div class="accordion">
     <details>
-      <summary>Title 1</summary>
-      <p>Content for item 1</p>
-    </details>
-    <details>
-      <summary>Title 2</summary>
-      <p>Content for item 2</p>
+      <summary>Comment performer sur X ?</summary>
+      <div><FAQ1 /></div>
+      <details>
+        <summary>Les Métriques pour Monétiser son audience</summary>
+        <p>Content for item 2</p>
+      </details>
+      <details>
+        <summary>Comment faire une Offre qui vend ?</summary>
+        <p>Content for item 3</p>
+      </details>
     </details>
   </div>
+
+  <style>
+    .faq {
+      padding: 1.5rem;
+      background-color: black;
+      width: 593px;
+      box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .twitter-x-faq {
+      width: 1rem;
+      height: 1rem;
+      position: relative;
+      top: 0.025rem;
+    }
+
+    .alert {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 0.8rem;
+      color: white;
+    }
+
+    .accordion {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .accordion details {
+      border: 1px solid #ddd;
+      padding: 10px;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .accordion summary {
+      color: white;
+      cursor: pointer;
+    }
+
+    .accordion div {
+      margin: 1.25rem 1rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Styles for mobile */
+    }
+
+    @media (min-width: 769px) {
+      /* Styles for desktop */
+    }
+  </style>
 </div>
-
-<style>
-  .faq {
-    padding: 1.5rem;
-    background-color: black;
-    width: 593px;
-    height: 374px;
-    box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
-  }
-
-  .twitter-x-faq {
-    width: 1rem;
-    height: 1rem;
-    position: relative;
-    top: 0.125rem;
-  }
-
-  .alert {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-size: 0.8rem;
-    color: white;
-  }
-
-  .accordion {
-    padding: 0.5rem;
-  }
-
-  .accordion details {
-    border: 1px solid #ddd;
-    padding: 10px;
-    color: white;
-    margin-bottom: 5px;
-  }
-
-  .accordion summary {
-    color: white;
-    cursor: pointer;
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    /* Styles for mobile */
-  }
-
-  @media (min-width: 769px) {
-    /* Styles for desktop */
-  }
-</style>
