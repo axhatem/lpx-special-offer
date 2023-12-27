@@ -13,25 +13,37 @@
   })();
 </script>
 
-<a href="https://google.fr" class="button glow-effect" data-glow-offset="true">
-  <span class="main">J'OBTIENS UNE LANDING PAGE PERFORMANTE</span><span
-    class="secondary">Je n'accepte ton projet que s'il a du potentiel.</span
+<div class="cta-container">
+  <a
+    href="https://google.fr"
+    class="button glow-effect"
+    data-glow-offset="true"
   >
-  <svg class="glow-container">
-    <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
-    <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
-  </svg>
-</a>
+    <span class="main">J'obtiens une landing page performante</span><span
+      class="secondary">Je n'accepte ton projet que s'il a du potentiel.</span
+    >
+    <svg class="glow-container">
+      <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+      <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+    </svg>
+  </a>
+</div>
 
 <style>
+  .cta-container {
+    display: flex;
+    justify-content: center;
+  }
+
   .button {
-    min-height: 4rem;
+    width: 26rem;
+    height: 6.25rem;
     text-decoration: none;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.4rem;
+    gap: 0.25rem;
     text-align: center;
     border-radius: 25px;
     border: 1px solid #f2f5fa;
@@ -43,12 +55,12 @@
   .main {
     text-decoration: underline;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 700;
   }
 
   .secondary {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 300;
   }
 
