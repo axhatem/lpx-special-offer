@@ -2,7 +2,9 @@
 import { Image } from "astro:assets";
 import { withBase } from "../../../utils/config-utils";
 const twitterXImageUrl = withBase("/images/twitter-X.svg");
-import { Content as FAQ1 } from "../../../content/faq-1.md";
+const faqItems = await Astro.glob("../../../content/faq/*.md");
+
+console.log(faqItems.length);
 ---
 
 <script>
@@ -38,18 +40,14 @@ import { Content as FAQ1 } from "../../../content/faq-1.md";
     />
   </p>
   <div class="accordion">
-    <details>
-      <summary>Comment performer sur X ?</summary>
-      <div><FAQ1 /></div>
-    </details>
-    <details>
-      <summary>Les Métriques pour Monétiser son audience</summary>
-      <p>Content for item 2</p>
-    </details>
-    <details>
-      <summary>Comment faire une Offre qui vend ?</summary>
-      <p>Content for item 3</p>
-    </details>
+    {
+      faqItems.map((faqItem) => (
+        <details class="md-content">
+          <summary>{faqItem.frontmatter.question}</summary>
+          <div set:html={faqItem.compiledContent()} />
+        </details>
+      ))
+    }
   </div>
 
   <style>
@@ -96,15 +94,6 @@ import { Content as FAQ1 } from "../../../content/faq-1.md";
 
     .accordion div {
       margin: 1.25rem 1rem;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      /* Styles for mobile */
-    }
-
-    @media (min-width: 769px) {
-      /* Styles for desktop */
     }
   </style>
 </div>
