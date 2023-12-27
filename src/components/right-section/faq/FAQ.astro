@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import { withBase } from "../../../utils/config-utils";
+const twitterXImageUrl = withBase("/images/twitter-X.svg");
+---
+
+<script>
+  const ENABLE_MULTIPLE_COLLAPSE = false;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement; // Type assertion here
+
+      if (target.tagName === "SUMMARY" && !ENABLE_MULTIPLE_COLLAPSE) {
+        document.querySelectorAll("details[open]").forEach((detail) => {
+          if (detail !== target.parentNode) {
+            // Now we can safely access parentNode
+            detail.removeAttribute("open");
+          }
+        });
+      }
+    });
+  });
+</script>
+
+<div class="faq">
+  <p class="alert">
+    <span class="bold-800">ALERTE !&nbsp;&nbsp;</span> Ne fais&nbsp;<span
+      class="underline">pas appel à moi</span
+    >&nbsp;avant d'être prêt&nbsp;&nbsp;
+    <Image src={twitterXImageUrl} alt="Twitter-X" width={20} height={20} />
+  </p>
+  <div class="accordion">
+    <details>
+      <summary>Title 1</summary>
+      <p>Content for item 1</p>
+    </details>
+    <details>
+      <summary>Title 2</summary>
+      <p>Content for item 2</p>
+    </details>
+  </div>
+</div>
+
+<style>
+  .faq {
+    padding: 1.5rem;
+    background-color: black;
+    width: 593px;
+    height: 374px;
+    box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .alert {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  .accordion details {
+    border: 1px solid #ddd;
+    padding: 10px;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .accordion summary {
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Styles for mobile */
+  }
+
+  @media (min-width: 769px) {
+    /* Styles for desktop */
+  }
+</style>
