@@ -92,8 +92,20 @@ console.log(faqItems.length);
     }
 
     .accordion details {
-      border: 1px solid #ddd;
-      padding: 10px;
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 1rem;
       color: white;
       margin-bottom: 5px;
     }
@@ -116,7 +128,7 @@ console.log(faqItems.length);
     .accordion summary::before {
       content: ""; /* Needed for pseudo-element to show */
       position: absolute; /* Position it relative to summary */
-      right: 0;
+      right: 1rem;
       top: 0;
       background-image: var(--openImageUrl); /* Default icon */
       background-size: cover;
