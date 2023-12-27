@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import { withBase } from "../../../utils/config-utils";
 const twitterXImageUrl = withBase("/images/twitter-X.svg");
+const openImageUrl = withBase("/images/right-pointing-arrow.svg");
+const closedImageUrl = withBase("/images/down-pointing-arrow.svg");
 const faqItems = await Astro.glob("../../../content/faq/*.md");
 
 console.log(faqItems.length);
@@ -39,7 +41,10 @@ console.log(faqItems.length);
       class="twitter-x-faq"
     />
   </p>
-  <div class="accordion">
+  <div
+    class="accordion"
+    style={`--openImageUrl: url(${openImageUrl});--closedImageUrl: url(${closedImageUrl})`}
+  >
     {
       faqItems.map((faqItem) => (
         <details class="md-content">
@@ -62,14 +67,15 @@ console.log(faqItems.length);
       width: 1rem;
       height: 1rem;
       position: relative;
-      top: 0.025rem;
+      top: 0.1rem;
+      left: 0.1rem;
     }
 
     .alert {
       display: flex;
       align-items: center;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 1rem;
       color: white;
     }
 
@@ -94,6 +100,27 @@ console.log(faqItems.length);
 
     .accordion div {
       margin: 1.25rem 1rem;
+    }
+
+    .accordion summary {
+      list-style: none; /* Hide default marker */
+      cursor: pointer;
+      position: relative; /* Needed for absolute positioning of pseudo-element */
+    }
+
+    .accordion summary::before {
+      content: ""; /* Needed for pseudo-element to show */
+      position: absolute; /* Position it relative to summary */
+      right: 0;
+      top: 0;
+      background-image: var(--openImageUrl); /* Default icon */
+      background-size: cover;
+      width: 20px; /* Adjust size as needed */
+      height: 20px; /* Adjust size as needed */
+    }
+
+    .accordion details[open] summary::before {
+      background-image: var(--closedImageUrl);
     }
   </style>
 </div>
