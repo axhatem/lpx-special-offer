@@ -3,7 +3,8 @@ import { Image } from "astro:assets";
 import { withBase } from "../../utils/config-utils.ts";
 import { bannerBackgroundColor, redColor } from "../../style/colors.ts";
 import Available from "./Available.astro";
-const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
+const rightArrowSquareImageUrl = withBase("/images/right-arrow-square.svg");
+const twitterXImageeUrl = withBase("/images/twitter-X-square.svg");
 ---
 
 <section class="advertisement">
@@ -15,7 +16,20 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
   </p>
   <a href="https://google.fr" class="take-chance-container">
     <p class="take-chance">JE SAISIS MA CHANCE</p>
-    <Image src={rightArrowSquareUrl} alt="Warning!" width={20} height={20} />
+    <Image
+      src={rightArrowSquareImageUrl}
+      alt="Warning!"
+      class="right-arrow-icon"
+      width={20}
+      height={20}
+    />
+    <Image
+      src={twitterXImageeUrl}
+      alt="Twitter-X"
+      class="twitter-x-icon"
+      width={50}
+      height={50}
+    />
   </a>
 </section>
 
@@ -34,7 +48,15 @@ const rightArrowSquareUrl = withBase("/images/right-arrow-square.svg");
     height: 3rem;
   }
 
-  img {
+  .twitter-x-icon {
+    position: absolute;
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    right: 0.5rem;
+  }
+
+  .right-arrow-icon {
     width: 20px;
     height: 20px;
   }
