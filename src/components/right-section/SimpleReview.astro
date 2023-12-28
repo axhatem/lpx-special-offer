@@ -1,29 +1,13 @@
 ---
-import { withBase } from "../../utils/config-utils";
 import FiveRating from "../common/FiveRating.astro";
-import { Image } from "astro:assets";
-const twitterXImageUrl = withBase("/images/twitter-X-only.svg");
 ---
 
 <div>
   <FiveRating />
-  <p>
-    11+ Entrepreneurs sur <Image
-      src={twitterXImageUrl}
-      alt="Twitter-X"
-      width={15}
-      height={15}
-      class="twitter-x-logo"
-    /> me font déjà confiance
-  </p>
+  <p>11+ Entrepreneurs sur me font déjà confiance</p>
 </div>
 
 <style>
-  .twitter-x-logo {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
   div {
     display: flex;
     gap: 0.5rem;
@@ -32,7 +16,7 @@ const twitterXImageUrl = withBase("/images/twitter-X-only.svg");
   }
 
   p {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
     color: #000;
   }
 </style>
