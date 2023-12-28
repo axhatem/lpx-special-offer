@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 import { withBase } from "../../utils/config-utils.ts";
 import { bannerBackgroundColor, redColor } from "../../style/colors.ts";
-import Available from "./Available.astro";
+import PulsingCircle from "../common/PulsingCircle.astro";
 const rightArrowSquareImageUrl = withBase("/images/right-arrow-square.svg");
 const twitterXImageeUrl = withBase("/images/twitter-X-square.svg");
 ---
 
 <section class="advertisement">
-  <Available />
+  <PulsingCircle color={redColor} size="0.8rem" />
   <p class="banner-text">
     Si tu vois cette page, c'est qu'il me&nbsp;<span class="underline"
       >reste 1 place</span
@@ -88,5 +88,13 @@ const twitterXImageeUrl = withBase("/images/twitter-X-square.svg");
     display: flex;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    cursor: pointer;
   }
 </style>
