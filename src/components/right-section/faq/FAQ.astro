@@ -30,18 +30,7 @@ console.log(faqItems.length);
 
 <div class="faq">
   <p class="alert-title">ALERTE !</p>
-  <p class="alert-subtitle">
-    Ne fais&nbsp;<span class="underline">pas appel à moi</span>&nbsp;avant
-    d'être prêt
-
-    <Image
-      src={twitterXImageUrl}
-      alt="Twitter-X"
-      width={20}
-      height={20}
-      class="twitter-x-faq"
-    />
-  </p>
+  <p class="alert-subtitle">Ne fais pas appel à moi avant d'être prêt</p>
   <div
     class="accordion"
     style={`--openImageUrl: url(${openImageUrl});--closedImageUrl: url(${closedImageUrl})`}
@@ -58,9 +47,9 @@ console.log(faqItems.length);
 
   <style>
     .faq {
-      margin-top: 1rem;
-      width: 40rem;
-      padding: 1.5rem;
+      width: 64rem;
+      margin-top: 1.5rem;
+      padding: 2rem;
       color: white;
       background-color: black;
       box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.25);
@@ -75,21 +64,19 @@ console.log(faqItems.length);
     }
 
     .alert-title {
-      font-size: 1.125rem;
       font-weight: 600;
     }
 
     .alert-subtitle {
-      font-size: 1rem;
       font-weight: 500;
       color: #999;
     }
 
     .accordion {
-      padding-top: 1.5rem;
+      padding-top: 3.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .accordion details:hover {
