@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
 import { withBase } from "../../../utils/config-utils";
-const twitterXImageUrl = withBase("/images/twitter-X.svg");
 const openImageUrl = withBase("/images/right-pointing-arrow.svg");
 const closedImageUrl = withBase("/images/down-pointing-arrow.svg");
 const faqItems = await Astro.glob("../../../content/faq/*.md");
@@ -37,7 +35,7 @@ console.log(faqItems.length);
   >
     {
       faqItems.map((faqItem) => (
-        <details class="md-content">
+        <details class="faq-md-content">
           <summary>{faqItem.frontmatter.question}</summary>
           <div set:html={faqItem.compiledContent()} />
         </details>
@@ -87,13 +85,13 @@ console.log(faqItems.length);
     }
 
     .accordion details {
-      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset;
+      box-shadow: rgba(255, 255, 255, 0.1) 0 0.1rem 0.1rem 0 inset;
       background: linear-gradient(
         0deg,
         rgba(255, 255, 255, 0.05) 0%,
         rgba(255, 255, 255, 0.1) 100%
       );
-      border-radius: 12px;
+      border-radius: 1.4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -115,24 +113,46 @@ console.log(faqItems.length);
     }
 
     .accordion summary {
-      list-style: none; /* Hide default marker */
+      list-style: none; 
       cursor: pointer;
-      position: relative; /* Needed for absolute positioning of pseudo-element */
+      position: relative;
     }
 
     .accordion summary::before {
-      content: ""; /* Needed for pseudo-element to show */
-      position: absolute; /* Position it relative to summary */
+      content: ""; /
+      position: absolute;
       right: 1rem;
       top: 0;
-      background-image: var(--openImageUrl); /* Default icon */
+      background-image: var(--openImageUrl); 
       background-size: cover;
-      width: 20px; /* Adjust size as needed */
-      height: 20px; /* Adjust size as needed */
+      width: 2rem;
+      height: 2rem;
     }
 
     .accordion details[open] summary::before {
       background-image: var(--closedImageUrl);
+    }
+  </style>
+  <style is:global>
+
+    .faq-md-content h1,
+    .faq-md-content h2,
+    .faq-md-content h3 {
+      padding: 1rem 0rem 0.5rem 0;
+    }
+
+    .faq-md-content h1 {
+      text-decoration: underline;
+    }
+
+    .faq-md-content p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+
+    .faq-md-content strong {
+      font-weight: 600;
     }
   </style>
 </div>
