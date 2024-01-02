@@ -1,8 +1,8 @@
 ---
-import { withBase } from "../../../utils/config-utils";
+import { withBase } from "../../utils/config-utils";
 const openImageUrl = withBase("/images/right-pointing-arrow.svg");
 const closedImageUrl = withBase("/images/down-pointing-arrow.svg");
-const faqItems = await Astro.glob("../../../content/faq/*.md");
+const faqItems = await Astro.glob("../../content/faq/*.md");
 
 console.log(faqItems.length);
 ---
