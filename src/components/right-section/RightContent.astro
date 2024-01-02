@@ -6,19 +6,9 @@ import CTA from "./cta/CTA.astro";
 import CheckList from "./check-list/CheckList.astro";
 import FAQ from "./faq/FAQ.astro";
 import ValidateStrategyTogether from "./ValidateStrategyTogether.astro";
-import { withBase } from "../../utils/config-utils";
-import { Image } from "astro:assets";
-const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
 ---
 
 <section class="right-section">
-  <Image
-    src={leftDownArrowImageUrl}
-    alt={"Video ICI"}
-    width={100}
-    height={100}
-    class={"left-down-arrow"}
-  />
   <SimpleReview />
   <MainTitle />
   <SubTitle />
@@ -29,20 +19,14 @@ const leftDownArrowImageUrl = withBase("/images/left-down-arrow.svg");
 </section>
 
 <style>
-  .left-down-arrow {
-    position: absolute;
-    left: -10rem;
-  }
-
   .right-section {
     height: fit-content;
     width: 70rem;
     margin: 7rem 0;
-    padding: 3rem 5rem;
+    padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
     background: #fcfcfc;
-    box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.2) inset;
+    gap: 0.4rem;
   }
 </style>
